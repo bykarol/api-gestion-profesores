@@ -1,11 +1,14 @@
+import { Asignatura, Profesor } from "../types";
 import AsignaturaCard from "./AsignaturaCard";
-import { Asignatura } from "../types";
 
 interface Props {
-  asignaturas: Asignatura[]
+  asignaturas: Asignatura[];
+  profesor?: Profesor
+  profesores?: Array<Profesor>
+  setProfesores?: React.Dispatch<React.SetStateAction<Profesor[]>>
 }
 
-const AsignaturasLista = ({ asignaturas }: Props) => {
+const AsignaturasLista = ({ asignaturas, profesor, profesores, setProfesores }: Props) => {
   return (
     <table className="table table-bordered" id="tabla-asignatura">
       <thead>
@@ -23,7 +26,7 @@ const AsignaturasLista = ({ asignaturas }: Props) => {
         {asignaturas?.map((asignatura) => {
           return (
             <tr key={asignatura.nombre}>
-              <AsignaturaCard asignatura={asignatura} />
+              <AsignaturaCard asignatura={asignatura} profesor={profesor} profesores={profesores} setProfesores={setProfesores} />
             </tr>
           );
         })}

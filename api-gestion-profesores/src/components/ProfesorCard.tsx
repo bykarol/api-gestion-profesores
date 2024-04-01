@@ -2,11 +2,12 @@ import { Profesor } from "../types";
 
 interface Props {
   profesor: Profesor
+  showList?: boolean
   setShowList?: React.Dispatch<React.SetStateAction<boolean>>
   setProfesorID?: React.Dispatch<React.SetStateAction<number>>
 }
 
-const ProfesorCard = ({ profesor, setShowList, setProfesorID }: Props) => {
+const ProfesorCard = ({ profesor, showList, setShowList, setProfesorID }: Props) => {
   return (
     <div className="container flex row align-items-center">
       <div className="col flex align-items-center" id="box-prof-name">{profesor.nombre.charAt(0)}{profesor.apellido.charAt(0)}</div>
@@ -18,7 +19,7 @@ const ProfesorCard = ({ profesor, setShowList, setProfesorID }: Props) => {
       <div className="col">
         <span className="btn text-primary" onClick={() => {
           if (setShowList && setProfesorID) {
-            setShowList(false)
+            setShowList(!showList)
             setProfesorID(profesor.id)
           }
         }}>Editar</span>

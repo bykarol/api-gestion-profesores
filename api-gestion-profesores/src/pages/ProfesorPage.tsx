@@ -80,20 +80,19 @@ function ProfesorPage() {
   return (
     <>
 
-      {showList && <ProfesoresLista profesores={profesores} setShowList={setShowList} setProfesorID={setProfesorID} />}
+      {showList && <ProfesoresLista profesores={profesores} showList={showList} setShowList={setShowList} setProfesorID={setProfesorID} />}
 
       {!showList && profesorID &&
-        <article>
-          <ProfesorCard profesor={profesores[profesorID]} />
+        < article >
+          <ProfesorCard profesor={profesores[profesorID - 1]} />
           <hr />
           <BannerFrecuencia />
           <BannerHoras />
           <div className="table-responsive rounded-top">
-            <AsignaturasLista asignaturas={profesores[profesorID].asignaturas} />
+            <AsignaturasLista asignaturas={profesores[profesorID - 1].asignaturas} profesor={profesores[profesorID - 1]} profesores={profesores} setProfesores={setProfesores} />
           </div>
-          <AsignaturaForm profesor={profesores[profesorID]} profesores={profesores} nuevaAsignatura={setProfesores} />
-        </article>
-
+          <AsignaturaForm profesor={profesores[profesorID - 1]} profesores={profesores} nuevaAsignatura={setProfesores} />
+        </article >
       }
     </>
   );

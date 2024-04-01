@@ -4,10 +4,11 @@ import { Profesor } from "../types"
 
 interface Props {
   profesores: Array<Profesor>
+  showList: boolean
   setShowList: React.Dispatch<React.SetStateAction<boolean>>
   setProfesorID: React.Dispatch<React.SetStateAction<number>>
 }
-const ProfesoresLista = ({ profesores, setShowList, setProfesorID }: Props) => {
+const ProfesoresLista = ({ profesores, showList, setShowList, setProfesorID }: Props) => {
 
 
   return (
@@ -17,7 +18,7 @@ const ProfesoresLista = ({ profesores, setShowList, setProfesorID }: Props) => {
         {profesores?.map((profesor: Profesor) => {
           return (
             <li key={profesor.id}>
-              <ProfesorCard profesor={profesor} setShowList={setShowList} setProfesorID={setProfesorID} />
+              <ProfesorCard profesor={profesor} showList={showList} setShowList={setShowList} setProfesorID={setProfesorID} />
             </li>
           );
         })}
