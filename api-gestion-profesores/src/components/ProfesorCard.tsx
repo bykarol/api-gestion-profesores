@@ -8,17 +8,22 @@ interface Props {
 
 const ProfesorCard = ({ profesor, setShowList, setProfesorID }: Props) => {
   return (
-    <article className="profesor-card">
-      <span>{profesor.nombre} {profesor.apellido}</span>
-      <span>{profesor.telefono}</span>
-      <span>{profesor.correo}</span>
-      <span><button onClick={() => {
-        if (setShowList && setProfesorID) {
-          setShowList(false)
-          setProfesorID(profesor.id)
-        }
-      }}>Editar</button></span>
-    </article >
+    <div className="container flex row align-items-center">
+      <div className="col flex align-items-center" id="box-prof-name">{profesor.nombre.charAt(0)}{profesor.apellido.charAt(0)}</div>
+      <div className="col-9 flex">
+        <div><strong>{profesor.nombre} {profesor.apellido}</strong></div>
+        <a href={`mailto:${profesor.correo}`} target="_blank" title="Enviar correo">{profesor.correo}</a>
+        <div>{profesor.telefono}</div>
+      </div>
+      <div className="col">
+        <span className="btn text-primary" onClick={() => {
+          if (setShowList && setProfesorID) {
+            setShowList(false)
+            setProfesorID(profesor.id)
+          }
+        }}>Editar</span>
+      </div>
+    </div >
   );
 };
 

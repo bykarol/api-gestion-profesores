@@ -45,27 +45,27 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
   };
 
   return (
-    <div className="asignatura-form">
+    <div className="container mt-3 mb-3 asignatura-form">
       <h2>Añadir asignatura</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="form-control" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label htmlFor="nombreAsignatura">Selecciona la asignatura</label>
-          <select name="nombreAsignatura" onChange={handleChange} value={formValues.nombre}>
+          <select className="form-select" name="nombreAsignatura" onChange={handleChange} value={formValues.nombre}>
             <option value="Matemáticas">Matemáticas</option>
             <option value="Física y Química">Física y Química</option>
             <option value="Biología">Biología</option>
           </select>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="tipoAsignatura">Tipo de asignatura</label>
-          <select name="tipoAsignatura" onChange={handleChange} value={formValues.tipo}>
+          <select className="form-select" name="tipoAsignatura" onChange={handleChange} value={formValues.tipo}>
             <option value="Obligatoria">Obligatoria</option>
             <option value="Optativa">Optativa</option>
           </select>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="cursoAsignatura">Curso</label>
-          <select name="cursoAsignatura" onChange={handleChange} value={formValues.curso}>
+          <select className="form-select" name="cursoAsignatura" onChange={handleChange} value={formValues.curso}>
             <option value="1º ESO">1º ESO</option>
             <option value="2º ESO">2º ESO</option>
             <option value="3º ESO">3º ESO</option>
@@ -74,21 +74,21 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
             <option value="2º de Bachillerato">2º de Bachillerato</option>
           </select>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="grupoAsignatura">Grupo</label>
-          <select name="grupoAsignatura" onChange={handleChange} value={formValues.grupo}>
+          <select className="form-select" name="grupoAsignatura" onChange={handleChange} value={formValues.grupo}>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
           </select>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="horaAsignatura">Horas</label>
-          <input type="number" min="0" step="0.5" name="horaAsignatura" onChange={handleChange} value={formValues.horasSemanales} />
+          <input className="form-control" type="number" min="0" step="0.5" name="horaAsignatura" onChange={handleChange} value={formValues.horasSemanales} />
         </div>
-        <div>
+        <div className="mb-2 form-group">
           <label htmlFor="espacioAsignatura">Espacio</label>
-          <select name="espacioAsignatura" onChange={handleChange} value={formValues.espacio}>
+          <select className="form-select" name="espacioAsignatura" onChange={handleChange} value={formValues.espacio}>
             <option value="1º ESO - Grupo A">1º ESO - Grupo A</option>
             <option value="1º ESO - Grupo B">1º ESO - Grupo B</option>
             <option value="1º ESO - Grupo C">1º ESO - Grupo C</option>
@@ -114,7 +114,9 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
             <option value="2º de Bach - Grupo C">2º de Bach - Grupo C</option>
           </select>
         </div>
-        <button type="submit">Añadir asignatura</button>
+        <div className="d-flex flex-row-reverse">
+          <button className="btn btn-primary" type="submit">Añadir asignatura</button>
+        </div>
       </form>
     </div>
   );

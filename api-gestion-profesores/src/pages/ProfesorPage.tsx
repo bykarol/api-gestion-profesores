@@ -4,13 +4,15 @@ import ProfesoresLista from "../components/ProfesoresLista";
 import AsignaturaForm from "../components/AsignaturaForm";
 import AsignaturasLista from "../components/AsignaturasLista";
 import ProfesorCard from "../components/ProfesorCard";
+import BannerHoras from "../components/BannerHoras";
+import BannerFrecuencia from "../components/BannerFrecuencia";
 const INITIAL_STATE = {
   "profesores": [
     {
       "id": 1,
       "nombre": "Juan",
       "apellido": "Pérez",
-      "telefono": "123456789",
+      "telefono": "+34123456789",
       "correo": "juan.perez@example.com",
       "asignaturas": [
         {
@@ -35,7 +37,7 @@ const INITIAL_STATE = {
       "id": 2,
       "nombre": "María",
       "apellido": "García",
-      "telefono": "987654321",
+      "telefono": "+34987654321",
       "correo": "maria.garcia@example.com",
       "asignaturas": [
         {
@@ -77,12 +79,18 @@ function ProfesorPage() {
 
   return (
     <>
+
       {showList && <ProfesoresLista profesores={profesores} setShowList={setShowList} setProfesorID={setProfesorID} />}
 
       {!showList && profesorID &&
         <article>
           <ProfesorCard profesor={profesores[profesorID]} />
-          <AsignaturasLista asignaturas={profesores[profesorID].asignaturas} />
+          <hr />
+          <BannerFrecuencia />
+          <BannerHoras />
+          <div className="table-responsive rounded-top">
+            <AsignaturasLista asignaturas={profesores[profesorID].asignaturas} />
+          </div>
           <AsignaturaForm profesor={profesores[profesorID]} profesores={profesores} nuevaAsignatura={setProfesores} />
         </article>
 
