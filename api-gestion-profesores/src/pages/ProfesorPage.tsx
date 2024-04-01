@@ -87,7 +87,7 @@ function ProfesorPage() {
           <ProfesorCard profesor={profesores[profesorID - 1]} />
           <hr />
           <BannerFrecuencia />
-          <BannerHoras />
+          <BannerHoras asignaturas={profesores[profesorID - 1].asignaturas} />
           <div className="table-responsive rounded-top">
             <AsignaturasLista asignaturas={profesores[profesorID - 1].asignaturas} profesor={profesores[profesorID - 1]} profesores={profesores} setProfesores={setProfesores} />
           </div>

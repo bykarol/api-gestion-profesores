@@ -9,7 +9,7 @@ interface Props {
 const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
   const [formValues, setFormValues] = useState<Asignatura>({
     nombre: "Matemáticas",
-    tipo: "Obligatoria",
+    tipo: "obligatoria",
     curso: "1º de Bachillerato",
     grupo: "A",
     horasSemanales: 3.5,
@@ -49,23 +49,23 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
       <h2>Añadir asignatura</h2>
       <form className="form-control" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="nombreAsignatura">Selecciona la asignatura</label>
-          <select className="form-select" name="nombreAsignatura" onChange={handleChange} value={formValues.nombre}>
+          <label htmlFor="nombre">Selecciona la asignatura</label>
+          <select className="form-select" name="nombre" onChange={handleChange} value={formValues.nombre}>
             <option value="Matemáticas">Matemáticas</option>
             <option value="Física y Química">Física y Química</option>
             <option value="Biología">Biología</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="tipoAsignatura">Tipo de asignatura</label>
-          <select className="form-select" name="tipoAsignatura" onChange={handleChange} value={formValues.tipo}>
-            <option value="Obligatoria">Obligatoria</option>
-            <option value="Optativa">Optativa</option>
+          <label htmlFor="tipo">Tipo de asignatura</label>
+          <select className="form-select" name="tipo" onChange={handleChange} value={formValues.tipo}>
+            <option value="obligatoria">Obligatoria</option>
+            <option value="optativa">Optativa</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="cursoAsignatura">Curso</label>
-          <select className="form-select" name="cursoAsignatura" onChange={handleChange} value={formValues.curso}>
+          <label htmlFor="curso">Curso</label>
+          <select className="form-select" name="curso" onChange={handleChange} value={formValues.curso}>
             <option value="1º ESO">1º ESO</option>
             <option value="2º ESO">2º ESO</option>
             <option value="3º ESO">3º ESO</option>
@@ -75,20 +75,20 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="grupoAsignatura">Grupo</label>
-          <select className="form-select" name="grupoAsignatura" onChange={handleChange} value={formValues.grupo}>
+          <label htmlFor="grupo">Grupo</label>
+          <select className="form-select" name="grupo" onChange={handleChange} value={formValues.grupo}>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="horaAsignatura">Horas</label>
-          <input className="form-control" type="number" min="0" step="0.5" name="horaAsignatura" onChange={handleChange} value={formValues.horasSemanales} />
+          <label htmlFor="horasSemanales">Horas</label>
+          <input className="form-control" type="number" min="0" step="0.5" name="horasSemanales" onChange={handleChange} value={formValues.horasSemanales} />
         </div>
         <div className="mb-2 form-group">
-          <label htmlFor="espacioAsignatura">Espacio</label>
-          <select className="form-select" name="espacioAsignatura" onChange={handleChange} value={formValues.espacio}>
+          <label htmlFor="espacio">Espacio</label>
+          <select className="form-select" name="espacio" onChange={handleChange} value={formValues.espacio}>
             <option value="1º ESO - Grupo A">1º ESO - Grupo A</option>
             <option value="1º ESO - Grupo B">1º ESO - Grupo B</option>
             <option value="1º ESO - Grupo C">1º ESO - Grupo C</option>
