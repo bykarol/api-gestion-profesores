@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import ProfesorCard from "../components/ProfesorCard";
 import AsignaturasLista from "../components/AsignaturasLista";
+import AsignaturaForm from "../components/AsignaturaForm";
 
 function ProfesorPage() {
   // Obtener la ubicación actual
@@ -17,6 +18,7 @@ function ProfesorPage() {
       {profesor && <article>
         <ProfesorCard profesor={profesor} />
         <AsignaturasLista asignaturas={profesor.asignaturas} />
+        <AsignaturaForm />
       </article>}
     </div>
   );
