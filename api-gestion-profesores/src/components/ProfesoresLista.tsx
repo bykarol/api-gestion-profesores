@@ -1,34 +1,23 @@
 import ProfesorCard from "./ProfesorCard"
+import { Profesor } from "../types"
 
-interface Profesor {
-  id: number
-  nombre: string
-  apellido: string
-  telefono: string
-  correo: string
-  asignaturas: Array<Asignatura>
-}
-
-interface Asignatura {
-  nombre: string
-  tipo: string
-  curso: string
-  grupo: string
-  horas_semanales: number
-}
 
 interface Props {
   profesores: Array<Profesor>
+  setShowList: React.Dispatch<React.SetStateAction<boolean>>
+  setProfesorID: React.Dispatch<React.SetStateAction<number>>
 }
-const ProfesoresLista = ({ profesores }: Props) => {
+const ProfesoresLista = ({ profesores, setShowList, setProfesorID }: Props) => {
+
+
   return (
     <>
       <h2>Listado de Profesores</h2>
       <ul className="profesores-lista">
-        {profesores?.map((profesor) => {
+        {profesores?.map((profesor: Profesor) => {
           return (
             <li key={profesor.id}>
-              <ProfesorCard profesor={profesor} />
+              <ProfesorCard profesor={profesor} setShowList={setShowList} setProfesorID={setProfesorID} />
             </li>
           );
         })}

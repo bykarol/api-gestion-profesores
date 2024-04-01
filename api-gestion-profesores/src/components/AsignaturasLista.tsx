@@ -1,12 +1,5 @@
 import AsignaturaCard from "./AsignaturaCard";
-
-interface Asignatura {
-  nombre: string
-  tipo: string
-  curso: string
-  grupo: string
-  horasSemanales: number
-}
+import { Asignatura } from "../types";
 
 interface Props {
   asignaturas: Asignatura[]
