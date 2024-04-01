@@ -1,10 +1,4 @@
-interface Asignatura {
-  nombre: string
-  tipo: string
-  curso: string
-  grupo: string
-  horasSemanales: number
-}
+import { Asignatura } from "../types";
 
 interface Props {
   asignatura: Asignatura;
