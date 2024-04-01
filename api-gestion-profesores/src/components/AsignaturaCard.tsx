@@ -6,17 +6,19 @@ interface Props {
 
 const AsignaturaCard = ({ asignatura }: Props) => {
   return (
-    <article className="asignatura-card">
-      <span>{asignatura.nombre}</span>
-      <span>{asignatura.tipo}</span>
-      <span>{asignatura.curso}</span>
-      <span>{asignatura.grupo}</span>
-      <span>{asignatura.horasSemanales}</span>
-      <span>{asignatura.curso} {asignatura.grupo}</span>
-      <button>Ver</button>
-      <button>Editar</button>
-      <button>Eliminar</button>
-    </article>
+    <>
+      <td>{asignatura.nombre}</td>
+      <td>{asignatura.tipo}</td>
+      <td>{asignatura.curso}</td>
+      <td>{asignatura.horasSemanales}</td>
+      <td>{asignatura.grupo}</td>
+      <td>{asignatura.curso} {asignatura.grupo}</td>
+      <td>
+        <span className="btn text-primary p-1">Ver</span>
+        <span className="btn text-primary p-1">Editar</span>
+        <span className="btn btn-eliminar p-1" style={{ color: "red" }}>Eliminar</span>
+      </td >
+    </>
   );
 };
 

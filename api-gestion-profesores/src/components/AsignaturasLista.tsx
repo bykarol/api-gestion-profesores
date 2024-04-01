@@ -7,15 +7,28 @@ interface Props {
 
 const AsignaturasLista = ({ asignaturas }: Props) => {
   return (
-    <ul className="asignaturas-lista">
-      {asignaturas?.map((asignatura) => {
-        return (
-          <li key={asignatura.nombre}>
-            <AsignaturaCard asignatura={asignatura} />
-          </li>
-        );
-      })}
-    </ul>
+    <table className="table table-bordered" id="tabla-asignatura">
+      <thead>
+        <tr className="table-active">
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Curso</th>
+          <th scope="col">Grupo</th>
+          <th scope="col">Horas semana</th>
+          <th scope="col">Espacio Regular</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {asignaturas?.map((asignatura) => {
+          return (
+            <tr key={asignatura.nombre}>
+              <AsignaturaCard asignatura={asignatura} />
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 
