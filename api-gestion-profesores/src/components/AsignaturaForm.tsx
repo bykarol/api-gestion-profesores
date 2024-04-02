@@ -38,9 +38,11 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
   // Función para manejar el cambio en los campos del formulario
   const handleChange = (e: ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = e.target;
+    // parsear las horas
+    const parsedValue = name === 'horasSemanales' ? parseFloat(value) : value
     setFormValues({
       ...formValues,
-      [name]: value
+      [name]: parsedValue
     });
   };
 
