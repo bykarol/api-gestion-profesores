@@ -16,8 +16,8 @@ const AsignaturasLista = ({ asignaturas, profesor, profesores, setProfesores }: 
           <th scope="col">Nombre</th>
           <th scope="col">Tipo</th>
           <th scope="col">Curso</th>
-          <th scope="col">Grupo</th>
           <th scope="col">Horas semana</th>
+          <th scope="col">Grupo</th>
           <th scope="col">Espacio Regular</th>
           <th scope="col">Acciones</th>
         </tr>

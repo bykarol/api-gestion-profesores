@@ -10,10 +10,10 @@ const AsignaturaForm = ({ profesor, profesores, nuevaAsignatura }: Props) => {
   const [formValues, setFormValues] = useState<Asignatura>({
     nombre: "Matemáticas",
     tipo: "obligatoria",
-    curso: "1º de Bachillerato",
+    curso: "1º ESO",
     grupo: "A",
     horasSemanales: 3.5,
-    espacio: "1º Bach - Grupo A"
+    espacio: "1º ESO - Grupo A"
   });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
